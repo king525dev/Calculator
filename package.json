@@ -1,0 +1,66 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Simple \\calculators for all platforms",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "build-installer": "electron-builder"
+  },
+  "build": {
+    "appId": "Calculator",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "web/icon.png",
+      "publisherName": "king525dev"
+    },
+    "nsis": {
+      "installerIcon": "web/icon.png",
+      "uninstallerIcon": "web/icon.png",
+      "uninstallDisplayName": "Calculator",
+      "license": "license.txt",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "Calculator",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "runAfterFinish": true
+    }
+  },
+  "keywords": [
+    "calculator",
+    "html",
+    "android"
+  ],
+  "license": "ISC",
+  "author": {
+    "name": "king525dev",
+    "email": "oreoluwa.ajibade525@yahoo.com",
+    "url": "https://king525-portfolio.pages.dev/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/king525dev/Calculator"
+  },
+  "dependencies": {
+    "create-electron-app": "^6.4.2",
+    "electron-forge": "^5.2.4",
+    "electron-prebuilt-compile": "^8.2.0",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/maker-deb": "^6.0.4",
+    "@electron-forge/maker-rpm": "^6.0.4",
+    "@electron-forge/maker-squirrel": "^6.0.4",
+    "@electron-forge/maker-zip": "^6.0.4",
+    "electron": "22.0.0",
+    "electron-builder": "^23.6.0"
+  }
+}
