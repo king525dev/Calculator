@@ -1,8 +1,11 @@
 const display = document.querySelector(".display");
 const buttons = document.querySelectorAll(".calc-btn");
-const specialChars = ["%", "×", "/", "-", "+", "=", "÷"]
-const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "=", "+", "*", "-", ".", "/", "%"]
+const themeSwitcher = document.querySelector("i");
+const specialChars = ["%", "×", "/", "-", "+", "=", "÷"];
+const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "=", "+", "*", "-", ".", "/", "%"];
+const themeChanger = document.querySelector(".theme-changer");
 let output = "";
+let theme = "dark";
 
 function calculate(btnValue){
      if(btnValue === "=" && output !== ""){
@@ -10,15 +13,15 @@ function calculate(btnValue){
           display.style.color = "#e69f51";
      }else if(btnValue === "AC"){
           output = "";
-          display.style.color = "#333";
+          display.style.color = (theme == "dark") ? "#ddd" : "#333";
      }else if(btnValue === "DEL"){
           output = output.toString().slice(0,-1);
-          display.style.color = "#333";
+          display.style.color = (theme == "dark") ? "#ddd" : "#333";
      }else{
           if(output === "" && specialChars.includes(btnValue)){return}
           if(btnValue == "*"){btnValue = "×"}
           if(btnValue == "/"){btnValue = "÷"}
-          display.style.color = "#333";
+          display.style.color = (theme == "dark") ? "#ddd" : "#333";
           output += btnValue;
      }
 
@@ -32,7 +35,6 @@ buttons.forEach(button => {
 });
 
 document.addEventListener('keydown', e => { 
-     console.log(e.key)
      e.preventDefault();
      if(numbers.includes(e.key)){
           numbers.forEach(num => {
@@ -47,5 +49,15 @@ document.addEventListener('keydown', e => {
      }
      else if(e.key === "Delete"){
           calculate("AC");
+     }
+});
+
+themeSwitcher.addEventListener("click", () => {
+     if(theme == "dark"){
+          theme = "light";
+          themeChanger.setAttribute("href", "");
+     }else{
+          theme = "dark";
+          themeChanger.setAttribute("href", "theme.css");
      }
 });

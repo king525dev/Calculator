@@ -12,6 +12,7 @@ body{
      justify-content: center;
      background: #e0e3eb;
      color: #333;
+     transition: all 0.3s ease;
 }
 
 .container{
@@ -21,7 +22,6 @@ body{
      padding: 10px 20px 20px;
      background: #fff;
      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-     transition: all 0.3s ease;
      border-radius: 4px;
 }
 
@@ -36,6 +36,7 @@ body{
      font-weight: 300;
      pointer-events: none;
      overflow: visible;
+     letter-spacing: 2px;
 }
 
 .buttons{
@@ -62,15 +63,13 @@ body{
      color: #e69f51;
 }
 
-.switch {
+i {
      position: absolute;
      top: 0;
      right: 0;
-     border-radius: 0 0 0 4px;
      padding: 10px;
-     font-size: 20px;
-     background-color: #fff;
-     color: #e69f51;
+     font-size: 25px;
+     color: #333;
      border: none;
      outline: none;
 }

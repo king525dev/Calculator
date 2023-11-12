@@ -1,0 +1,21 @@
+body, i{
+     background: #3e3f41;
+     color: #ddd;
+}
+
+.container{
+     background: #000;
+     box-shadow: 0 5px 10px rgba(255, 255, 255, 0.05);
+}
+
+input{
+     background-color: #000;
+}
+
+.buttons button:not(.operator){
+     color: #ddd;
+}
+
+.buttons button{
+     background-color: #444;
+}
